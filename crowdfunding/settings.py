@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'taggit',
     'campaign.apps.CampaignConfig',
     'home',
+    'djangoflutterwave',
 
     # Auth and social auth
     'authen.apps.AuthenConfig',
@@ -240,3 +241,10 @@ COMMENT_FLAGS_ALLOWED = 1
 
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
+
+
+# FLW_PRODUCTION_PUBLIC_KEY = test
+# FLW_PRODUCTION_SECRET_KEY = test
+# FLW_SANDBOX_PUBLIC_KEY = "FLWPUBK-4eb3d20a830a542ad8d3e39240a02591-X"
+# FLW_SANDBOX_SECRET_KEY = "FLWSECK-32167796ea1850d1ee2de90e98d53c80-X"
+# FLW_SANDBOX = True

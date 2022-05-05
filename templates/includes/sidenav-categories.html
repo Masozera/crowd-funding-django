@@ -6,7 +6,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href="{% url 'home' %}">
+      <a class="navbar-brand pt-0" href="{% url 'home:home' %}">
         <img src="{% static 'img/brand/blue.png' %}"  class="navbar-brand-img" alt="...">
       </a>
       <!-- Collapse -->
@@ -16,7 +16,7 @@
         <ul class="navbar-nav">
           {% for category in categories %}
           <li class="nav-item">
-            <a class=" nav-link {% if 'index' in segment %} active {% endif %}" href="{% url 'category' category.id %}"> 
+            <a class=" nav-link {% if 'index' in segment %} active {% endif %}" href="{% url 'home:category' category.id %}"> 
               <i class="ni ni-tv-2 text-primary"></i> {{category.label}}
             </a>
           </li>

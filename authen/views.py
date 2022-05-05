@@ -16,6 +16,8 @@ from user.models import User, UserProfile
 
 from .forms import LoginForm, RegisterForm
 
+from home.views import index
+
 # Views
 
 
@@ -28,7 +30,7 @@ def register(request):
         # send activation mail
         #send_activation_email(request, form.cleaned_data.get('email'), user)
 
-        return redirect("login")
+        return redirect("/login")
     return render(request, "authen/register.html", {"form": form})
 
 
@@ -37,7 +39,7 @@ def login(request):
     form = LoginForm(data=request.POST or None)
     if form.is_valid():
         dj_login(request, form.user_cache)
-        return redirect(request, "home")
+        return redirect( "home:home")
     return render(request, "authen/login.html", {"form": form})
 
 
